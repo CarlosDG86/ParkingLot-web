@@ -2,7 +2,6 @@ package com.org.parking.web;
 
 import java.util.EnumSet;
 
-import javax.faces.application.Application;
 import javax.faces.webapp.FacesServlet;
 import javax.servlet.DispatcherType;
 
@@ -16,11 +15,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @EnableAutoConfiguration
-@ComponentScan({"com.org.parking.web.controller"})
+@ComponentScan({"com.org.parking.web"})
 public class App extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+    	System.setProperty("server.servlet.context-path", "/my-parking");
+        SpringApplication.run(App.class, args);
     }
 
     @Bean
