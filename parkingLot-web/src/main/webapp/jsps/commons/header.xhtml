@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:body>
+
+	<ui:composition>
+	
+	<p:panelGrid style="width: 100%;">
+        <p:row>
+            <p:column style="width: 50%;">
+                <h:graphicImage url="images/estacionamientoLogo.PNG" styleClass="logoParkig" title="Estacionamiento Villada S.A. de C.V." height="35%" width="15%"/>
+            </p:column>
+        </p:row>  
+    </p:panelGrid>
+
+    <p:ajaxStatus styleClass="logo" style="left:350px; width:32px; height:32px; margin-top:-30px;">
+        <f:facet name="start">
+            <h:graphicImage  url="images/ajax-loader.gif" alt="AJAX Status"/>
+        </f:facet>
+        <f:facet name="complete">
+            <h:outputText value=""/>
+        </f:facet>
+    </p:ajaxStatus>
+    
+    <p:ajaxStatus onstart="PF('blockUIWidget').block()" oncomplete="PF('blockUIWidget').unblock()"/>
+	
+	
+	</ui:composition>
+	
+</h:body>
+</html>

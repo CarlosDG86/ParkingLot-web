@@ -1,0 +1,114 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Estacionamiento Villada</title>
+	<style>
+.Bimage {
+	background-image: url(#{request.contextPath}/images/aero_abstract_bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.box-stretched {
+	height: 100%;
+}
+
+.vertical-container {
+	margin: 0;
+	height: 5%;
+	/* 	background: #efefef; */
+	border-radius: 1px;
+}
+.namefont{
+	color:white;
+	font-weight:bold;
+	font-size:34;
+}
+</style>
+</h:head>
+<h:body styleClass="Bimage">
+
+<script type="text/javascript">
+     function handleLoginRequest(xhr, status, args) {
+        if(args.validationFailed || !args.loggedIn) {
+         	
+        	setTimeout("location.reload(true);",1500);
+        }
+
+     }
+</script>
+ 
+
+
+	<p:growl id="growl" sticky="true" showDetail="true"  />
+
+	<div class="box-stretched">
+		<div class="vertical-container"></div>
+
+
+		<div align="center">
+			<h:form id="formLogin">
+				<h:panelGrid columns="2" width="100%" cellpadding="1"
+					cellspacing="200px">
+					<p:row>
+						<h:panelGrid columns="2">
+							<p:row>
+								<p:graphicImage value="images/parking_icon.png" width="100px" />
+							</p:row>
+							<p:row>
+								<h:outputLabel value="ESTACIONAMIENTO"
+									styleClass="namefont" />
+								<p></p>
+								<h:outputLabel value="VILLADA"
+									styleClass="namefont" />
+							</p:row>
+
+
+						</h:panelGrid>
+					</p:row>
+
+					<p:row>
+						<!-- 						bgcolor="#CBCED7" -->
+						<h:panelGrid id="panelLogin" columns="2" cellpadding="5" style="margin-top:5px">
+							<f:facet name="header">
+								<div align="center">
+									<p:graphicImage value="images/user_icon.png" alt=""
+										width="50px" />
+								</div>
+							</f:facet>
+
+							<h:outputLabel for="username" value="Username:"
+								style="color:white;font-weight:bold" />
+							<p:inputText id="username"
+								value="#{userLoginController.username}" required="true"
+								label="username" />
+							<h:outputLabel for="password" value="Password:"
+								style="color:white;font-weight:bold" />
+							<p:password id="password" value="#{userLoginController.password}"
+								required="true" label="password" />
+							<f:facet name="footer">
+								<div align="center">
+									<p:commandButton value="Login" update="growl,@form,@this" ajax="false"
+										style="width:100%;height:30px;margin-top:19px;"
+										action="#{userLoginController.login}" oncomplete="handleLoginRequest(xhr, status, args)" />
+										 
+								</div>
+							</f:facet>
+						</h:panelGrid>
+					</p:row>
+				</h:panelGrid>
+			</h:form>
+		</div>
+
+		<div class="vertical-container"></div>
+
+	</div>
+
+
+</h:body>
+</html>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+
+	<ui:composition template="/jsps/commons/layout.xhtml">
+		<ui:define name="content2">
+			<h:form>
+
+				<p:growl id="growl" sticky="true" showDetail="true" />
+				<p:panel header="Personal Details">
+					<p:messages />
+					<h:panelGrid columns="2" columnClasses="label, value">
+						<h:outputText value="Placa: *" />
+						<p:inputText value="#{registroESController.placa}" required="true"
+							label="Firstname" />
+
+						<h:outputText value="Estancia: *" />
+						<p:selectOneRadio id="tipoEstancia"
+							value="#{registroESController.tipoEstancia}" layout="responsive"
+							columns="3">
+							<f:selectItem itemLabel="x Hora" itemValue="hora" />
+							<f:selectItem itemLabel="x Dia" itemValue="dia" />
+							<f:selectItem itemLabel="x Pesion" itemValue="pension" />
+						</p:selectOneRadio>
+
+
+						<h:outputText value="Pase de Cortesia: " />
+						<h:selectBooleanCheckbox value="#{registroESController.cortesia}" />
+					</h:panelGrid>
+				</p:panel>
+
+				<p:commandButton value="Submit" update="@form,growl,dialog"
+					icon="pi pi-check" action="#{buttonView.buttonSave}"
+					oncomplete="PF('dlg').show()" />
+
+
+				<p:dialog id="dialog" header="Values" modal="true" resizable="false"
+					showEffect="fade" widgetVar="dlg">
+					<h:panelGrid columns="1" id="display">
+						<h:outputText value="Value 1:" />
+						<h:outputText value="Value 2:" />
+					</h:panelGrid>
+				</p:dialog>
+
+				<!-- 			<h3>Floating Label</h3> -->
+
+
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+
+</html>
