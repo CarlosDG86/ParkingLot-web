@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+
+<h:body>
+	<ui:composition>
+
+		<h:form>
+			<p:growl id="messages" showDetail="false" />
+
+			<h3 style="margin-top: 0">Main Menu</h3>
+			<p:menu>
+				<p:submenu label="Registro">
+					<p:menuitem value="Entrada" ajax="false"
+						action="#{menuController.menuNavigation('ENTRADA')}" />
+					<p:menuitem value="Salida" ajax="false"
+						action="#{menuController.menuNavigation('SALIDA')}" />
+				</p:submenu>
+				<p:submenu label="Reportes">
+					<p:menuitem value="Corte Diario" ajax="false"
+						action="#{menuController.menuNavigation('CORTE')}" />
+				</p:submenu>
+				<p:submenu label="Boleto Perdido">
+					<p:menuitem value="Pagar" ajax="false"
+						action="#{menuController.menuNavigation('BOL_PERDIDO')}" />
+				</p:submenu>
+			</p:menu>
+
+
+
+
+		</h:form>
+
+
+
+
+	</ui:composition>
+</h:body>
+</html>
