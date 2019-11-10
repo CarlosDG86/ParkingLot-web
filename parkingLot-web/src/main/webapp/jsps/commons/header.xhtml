@@ -5,6 +5,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui">
+      
 <h:head>
 </h:head>
 
@@ -14,15 +15,15 @@
 	
 	<p:panelGrid style="width: 100%;">
         <p:row>
-            <p:column style="width: 50%;">
-                <h:graphicImage url="images/estacionamientoLogo.PNG" styleClass="logoParkig" title="Estacionamiento Villada S.A. de C.V." height="35%" width="15%"/>
+            <p:column style="width: 50%;" >
+<!--                 <h:graphicImage url="images/estacionamientoLogo.PNG" styleClass="logoParkig" title="Estacionamiento Villada S.A. de C.V." height="35%" width="15%"/> -->
             </p:column>
         </p:row>  
     </p:panelGrid>
 
     <p:ajaxStatus styleClass="logo" style="left:350px; width:32px; height:32px; margin-top:-30px;">
         <f:facet name="start">
-            <h:graphicImage  url="images/ajax-loader.gif" alt="AJAX Status"/>
+            <h:graphicImage  url="../../images/ajax-loader.gif" alt="AJAX Status"/>
         </f:facet>
         <f:facet name="complete">
             <h:outputText value=""/>

@@ -13,7 +13,9 @@ import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
+@Configuration
 @EnableAutoConfiguration
 @ComponentScan({"com.org.parking.web"})
 public class App extends SpringBootServletInitializer {
@@ -23,10 +25,18 @@ public class App extends SpringBootServletInitializer {
         SpringApplication.run(App.class, args);
     }
 
+//    @Bean
+//    public ServletRegistrationBean servletRegistrationBean() {
+//        FacesServlet servlet = new FacesServlet();
+//        return new ServletRegistrationBean(servlet, "*.jsf");
+//    }
+    
     @Bean
     public ServletRegistrationBean servletRegistrationBean() {
-        FacesServlet servlet = new FacesServlet();
-        return new ServletRegistrationBean(servlet, "*.jsf");
+        ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(
+                new FacesServlet(), "*.xhtml");
+        servletRegistrationBean.setLoadOnStartup(1);
+        return servletRegistrationBean;
     }
 
     @Bean

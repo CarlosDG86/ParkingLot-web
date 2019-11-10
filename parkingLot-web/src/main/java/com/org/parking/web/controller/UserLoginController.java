@@ -7,15 +7,18 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 
 import org.ocpsoft.rewrite.el.ELBeanName;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Scope(value = "session")
-@Component(value = "UserLoginController")
-@ELBeanName(value = "UserLoginController")
+@Component(value = "userLoginController")
+@ELBeanName(value = "userLoginController")
 //@Join(path = "/product", to = "/product-form.jsf")
+//@Component
+@Scope(value = "session")
 public class UserLoginController implements Serializable {
 
 	/**
@@ -49,7 +52,7 @@ public class UserLoginController implements Serializable {
 
 		if (username != null && username.equals("admin") && password != null && password.equals("admin")) {
 			loggedIn = true;
-			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome", username);
+			message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Welcome!!", username);
 			FacesContext.getCurrentInstance().addMessage(null, message);
 			return "jsps/welcome";
 		} else {
@@ -57,7 +60,7 @@ public class UserLoginController implements Serializable {
 			password = "";
 			message = new FacesMessage(FacesMessage.SEVERITY_WARN, "Loggin Error", "Invalid credentials");
 			FacesContext.getCurrentInstance().addMessage(null, message);
-			return "index";
+			return "start";
 		}
 
 //		FacesContext.getCurrentInstance().addMessage(null, message);

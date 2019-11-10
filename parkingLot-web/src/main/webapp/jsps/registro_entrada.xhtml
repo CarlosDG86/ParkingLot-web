@@ -8,7 +8,7 @@
 <h:body>
 
 	<ui:composition template="/jsps/commons/layout.xhtml">
-		<ui:define name="content2">
+		<ui:define name="content">
 			<h:form>
 
 				<p:growl id="growl" sticky="true" showDetail="true" />
@@ -22,10 +22,10 @@
 						<h:outputText value="Estancia: *" />
 						<p:selectOneRadio id="tipoEstancia"
 							value="#{registroESController.tipoEstancia}" layout="responsive"
-							columns="3">
-							<f:selectItem itemLabel="x Hora" itemValue="hora" />
-							<f:selectItem itemLabel="x Dia" itemValue="dia" />
-							<f:selectItem itemLabel="x Pesion" itemValue="pension" />
+							columns="1">
+							<f:selectItem itemLabel="Hora" itemValue="hora" />
+							<f:selectItem itemLabel="Dia" itemValue="dia" />
+							<f:selectItem itemLabel="Pesion" itemValue="pension" />
 						</p:selectOneRadio>
 
 

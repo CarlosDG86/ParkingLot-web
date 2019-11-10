@@ -1,6 +1,6 @@
 <html xmlns:h="http://java.sun.com/jsf/html"
-xmlns:p="http://primefaces.org/ui"
-xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <h:head>
 	<link href="stylesheet.css" rel="stylesheet" type="text/css" />
 </h:head>
@@ -8,23 +8,23 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
 
 	<p:layout fullPage="true">
 
-		<p:layoutUnit position="north" size="100" 
-			resizable="false" closable="false" collapsible="false">
+		<p:layoutUnit position="north" size="100" resizable="false"
+			closable="false" collapsible="false">
 			<ui:insert name="header">
 				<ui:include src="header.xhtml" />
 			</ui:insert>
 
 		</p:layoutUnit>
 
-<!-- 		<p:layoutUnit position="south" size="100" header="Bottom" -->
-<!-- 			resizable="false" closable="false" collapsible="false" > -->
-<!-- 			<ui:insert name="footer"> -->
-<!-- 				<ui:include src="footer.xhtml" /> -->
-<!-- 			</ui:insert> -->
-<!-- 		</p:layoutUnit> -->
+		<!-- 		<p:layoutUnit position="south" size="100" header="Bottom" -->
+		<!-- 			resizable="false" closable="false" collapsible="false" > -->
+		<!-- 			<ui:insert name="footer"> -->
+		<!-- 				<ui:include src="footer.xhtml" /> -->
+		<!-- 			</ui:insert> -->
+		<!-- 		</p:layoutUnit> -->
 
-		<p:layoutUnit position="west" size="240"
-			resizable="false" closable="false" collapsible="false">
+		<p:layoutUnit position="west" size="240" resizable="false"
+			closable="false" collapsible="false">
 			<ui:insert name="leftnav">
 				<ui:include src="leftnav.xhtml" />
 			</ui:insert>
