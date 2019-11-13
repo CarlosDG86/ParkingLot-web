@@ -31,10 +31,30 @@
 
 </h:panelGrid>
 
-<div align="left">
+                                               <div align="left">
 							<h:outputText value="Pase de Cortesia: " />
 							<h:selectBooleanCheckbox value="#{registroESController.cortesia}" />
 						</div>
+                                                
+                                                <div>
+                                                    <p:dataTable var="employee" value="#{employeeBean.employeeList}">
+                                                            <p:column headerText="Placa">
+                                                                <h:outputText value="#{employee.id}"/>
+                                                            </p:column>
+
+                                                            <p:column headerText="Hora">
+                                                                <h:outputText value="#{employee.name}"/>
+                                                            </p:column>
+
+                                                            <p:column headerText="Dia">
+                                                                <h:outputText value="#{employee.phoneNumber}"/>
+                                                            </p:column>
+
+                                                            <p:column headerText="Pension">
+                                                                <h:outputText value="#{employee.address}"/>
+                                                            </p:column>
+                                                        </p:dataTable>
+                                                </div>
 						<div align="center">						<p:commandButton value="Registrar" update="@form,growl,dialog" style="margin-top:15px"
 						icon="pi pi-check" action="#{buttonView.buttonSave}"
 						oncomplete="PF('dlg').show()" />
